@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lens Camera</title>
+<meta name="description" content="Lens Camera — portfolio of a photographer: street, travel and portrait work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="flash" id="flash" aria-hidden="true"></div>
+<div class="reticle" id="reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Lens Camera home">
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="16" r="3" fill="var(--red)"/></svg>
+    Lens Camera
+  </a>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Book a shoot</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <figure class="stage" id="stage">
+      <div class="viewfinder" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="boy" id="boy">
+        <canvas id="boyCanvas" width="432" height="640" role="img" aria-label="Illustrated photographer holding a camera, turning to follow your cursor"></canvas>
+      </div>
+      <figcaption class="exif" id="exif" aria-hidden="true">
+        <span id="exAp">f/2.8</span><span id="exSh">1/250</span><span id="exIso">ISO 200</span>
+      </figcaption>
+    </figure>
+
+    <div class="intro">
+      <h1><span class="line"><span>Lens</span></span><span class="line"><span>Camera</span></span></h1>
+      <p class="lede">Street, travel and portrait photography. Real light, honest faces, and the one frame that’s worth keeping.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="#work">See the work</a>
+        <a class="btn btn-line" href="#contact">Book a shoot</a>
+      </div>
+      <p class="hint" id="hint">Move your cursor — he follows.</p>
+    </div>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="workTitle">
+    <div class="work-head">
+      <h2 id="workTitle">Selected frames</h2>
+      <p>Six pictures from the last two years, shot on 35mm and a lot of patience.</p>
+    </div>
+    <div class="film-wrap" id="filmWrap">
+      <ol class="film" id="film">
+        <li><button data-i="0"><img src="work/misty-ridges.webp" alt="Layers of misty ridges fading into pale sky" loading="lazy"><span>Misty ridges<small>f/8 · 1/125 · ISO 100</small></span></button></li>
+        <li><button data-i="1"><img src="work/dune-line.webp" alt="Warm sand dunes with a sharp ridge line" loading="lazy"><span>Dune line<small>f/11 · 1/250 · ISO 100</small></span></button></li>
+        <li><button data-i="2"><img src="work/harbour-dusk.webp" alt="Harbour at dusk with the sun reflected on the water" loading="lazy"><span>Harbour at dusk<small>f/2.8 · 1/60 · ISO 400</small></span></button></li>
+        <li><button data-i="3"><img src="work/blue-hour.webp" alt="City skyline at blue hour with lit windows" loading="lazy"><span>Blue hour<small>f/4 · 1/30 · ISO 800</small></span></button></li>
+        <li><button data-i="4"><img src="work/pine-fog.webp" alt="Black and white pine forest in fog" loading="lazy"><span>Pine fog<small>f/5.6 · 1/200 · ISO 200</small></span></button></li>
+        <li><button data-i="5"><img src="work/salt-flats.webp" alt="Salt flats stretching to the horizon" loading="lazy"><span>Salt flats<small>f/16 · 1/500 · ISO 100</small></span></button></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <h2>I wait for the light, then I wait a bit more.</h2>
+      <div class="about-copy">
+        <p>I’m a photographer who prefers walking to planning. Most of my work starts with an early morning and no shot list, then slowly turns into a story about a place and the people in it.</p>
+        <p>I shoot weddings, portraits, travel stories and small brands. Every project gets a short call first, so I know what the pictures need to do.</p>
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Chennai, available worldwide</dd></div>
+          <div><dt>Shoots</dt><dd>Portraits, weddings, travel, brands</dd></div>
+          <div><dt>Delivery</dt><dd>Edited gallery in 10 days</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Have a frame in mind?</h2>
+    <p>Tell me the date, the place and what the pictures are for. I reply within two days.</p>
+    <a class="mail" href="mailto:hello@lenscamera.studio">hello@lenscamera.studio</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© 2026 Lens Camera</span>
+  <span><a href="#">Instagram</a> <a href="#">Behance</a> <a href="#">Pinterest</a></span>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photograph viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close viewer">Close</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
